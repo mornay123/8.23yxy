@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 用promise实现一个暂停函数
+        function sleep(time) {
+            return new Promise((resolve) => {
+                setTimeout(resolve, time)
+            })
+        }
+        async function main() {
+            await sleep(3000)
+            console.log('你好')
+        }
+        main()
+        // 将一个数组 扩大100倍, 求和
+        let arr = [1, 2, 3]
+        function sum(arr) {
+            const newArr = arr.map(item => {
+                return item * 100
+            })
+            const sum = newArr.reduce((prev, item) => {
+                return prev + item
+            });
+            console.log(sum);
+        }
+        sum(arr)
+
+    </script>
+</body>
+
+</html>
